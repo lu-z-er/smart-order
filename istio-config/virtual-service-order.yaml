@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: order-vs
+  namespace: smartorder
+spec:
+  hosts:
+    - order.smartorder.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: order.smartorder.svc.cluster.local
+            port:
+              number: 8082

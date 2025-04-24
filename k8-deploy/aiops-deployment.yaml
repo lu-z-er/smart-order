@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aiops
+  namespace: smartorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aiops
+  template:
+    metadata:
+      labels:
+        app: aiops
+    spec:
+      containers:
+        - name: aiops
+          image: ghostluzer/aiops-service:latest
+          ports:
+            - containerPort: 8090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aiops
+  namespace: smartorder
+spec:
+  selector:
+    app: aiops
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090

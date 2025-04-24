@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: order_service_route
+          uri: lb://order  # Uses Istio's load balancing
+          predicates:
+            - Path=/orders/**  # Routes /orders/** to order-service
+          filters:
+            - AddRequestHeader=Service, Order-Service
+        - id: ai_ops_service_route
+          uri: lb://aiops  # Uses Istio's load balancing
+          predicates:
+            - Path=/aiops/**  # Routes /aiops/** to ai-ops-service
+          filters:
+            - AddRequestHeader=Service, AI-Ops-Service

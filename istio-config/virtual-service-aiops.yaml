@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: aiops-vs
+  namespace: smartorder
+spec:
+  hosts:
+    - aiops.smartorder.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: aiops.smartorder.svc.cluster.local
+            port:
+              number: 8090
