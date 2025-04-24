@@ -16,7 +16,7 @@ SmartOrder is a modern, scalable, and efficient microservices-based order proces
 The SmartOrder project is structured into several key services:
 
 - **Order Service**: Manages order creation and processing.
-- **Validation Service**: Validates orders using serverless functions.
+- **Validation Service**: Validates orders using serverless functions. [https://github.com/lu-z-er/validation]
 - **AI Ops Service**: Monitors system performance using machine learning and handles auto-scaling.
 - **Gateway Service**: Exposes a single entry point for all requests, integrated with Istio for routing and load balancing.
 
