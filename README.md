@@ -1,6 +1,3 @@
-Here’s a README file template for your **SmartOrder** project. You can adapt and extend it according to any additional details of your project.
-
----
 
 # SmartOrder - Microservices-based E-commerce Order Processing System
 
